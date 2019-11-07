@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block main_content %}
+        <!-- 面包屑导航 -->
+        <div class="row">
+            <ul  class="breadcrumb ">
+                <li><a href="#"><i class="fa fa-home" ></i>在库销售</a></li>
+                <li class="active">销售列表</li>
+            </ul>
+        </div>
+
+        <!-- 表格 -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>品牌</th>
+                    <th>规格</th>
+                    <th>在库数量</th>
+                    <th>在库周期</th>
+                    <th>品类</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for sell in sells %}
+                        <tr>
+                            <td>{{loop.index}}</td>
+                            <td>{{sell[1]}}</td>
+                            <td>{{sell[2]}}</td>
+                            <td>{{sell[5]}}</td>
+                            <td>{{sell[7]}}</td>
+                            <td>{{sell[8]}}</td>
+                            <td>
+                                <a  href="{{url_for('sell.sellInformation',id=sell[0],number=sell[5])}}"  name="shop" class="btn btn-default btn-xs" >
+                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                </a>
+                            </td>
+                        </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}

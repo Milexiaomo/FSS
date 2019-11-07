@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block main_content %}
+        <!-- 面包屑导航 -->
+        <div class="row">
+            <ul  class="breadcrumb ">
+                <li><a href="#"><i class="fa fa-home" ></i>在库销售</a></li>
+                <li class="active">销售历史记录</li>
+            </ul>
+        </div>
+
+        <!-- 表格 -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>品牌</th>
+                    <th>规格</th>
+                    <th>销售数量</th>
+                    <th>单价</th>
+                    <th>操作人</th>
+                    <th>操作时间</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in datas %}
+                        <tr>
+                            <td>{{loop.index}}</td>
+                            <td>{{data[1]}}</td>
+                            <td>{{data[2]}}</td>
+                            <td>{{data[3]}}</td>
+                            <td>{{data[4]}}</td>
+                            <td>{{data[5]}}</td>
+                            <td>{{data[6]}}</td>
+
+                        </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}

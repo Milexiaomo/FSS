@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block main_content %}
+        <!-- 面包屑导航 -->
+        <div class="row">
+            <ul  class="breadcrumb ">
+                <li><a href="#"><i class="fa fa-home" ></i>入库管理</a></li>
+                <li class="active">入库单查询</li>
+            </ul>
+        </div>
+
+
+        <!-- 表格 -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>品牌</th>
+                    <th>品类</th>
+                    <th>入库数量</th>
+                    <th>规格</th>
+                    <th>单价</th>
+                    <th>总金额</th>
+                    <th>出库数量</th>
+                    <th>单件收入</th>
+                    <th>收入额</th>
+                    <th>入库时间</th>
+                </tr>
+            </thead>
+            <tbody>
+            {%  for  product in products  %}
+                <tr>
+                    <td>{{product[0]}}</td>
+                    <td>{{product[1]}}</td>
+                    <td>{{product[2]}}</td>
+                    <td>{{product[3]}}</td>
+                    <td>{{product[4]}}</td>
+                    <td>{{product[5]}}</td>
+                    <td>{{product[6]}}</td>
+                    <td>{{product[7]}}</td>
+                    <td>{{product[8]}}</td>
+                    <td>{{product[9]}}</td>
+                    <td>{{product[10]}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}

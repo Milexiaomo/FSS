@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block  main_content %}
+        <!-- 面包屑导航 -->
+        <div class="row">
+            <ul  class="breadcrumb ">
+                <li><a href="#"><i class="fa fa-home" ></i>入库管理</a></li>
+                <li class="active">新建入库单</li>
+            </ul>
+        </div>
+        <!-- 表单内容 -->
+        <div class="row">
+            <div class="panel  panel-default">
+                <div class="panel-heading">
+                    <h4>新建入库单</h4>
+                </div>
+            
+                <div class="panel  panel-body">
+                <form action="/stock/post_product/" class="form-horizontal" method="post">
+                    <div class="form-group">
+                        <label for="product_name" class="control-label  col-lg-2" >商品名称:</label>
+                        <div class="col-lg-6">
+                            <input type="text"  class="form-control" id="product_name" name="product_name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product_category" class="control-label  col-lg-2" >商品品类:</label>
+                        <div class="col-lg-6">
+                            <input type="text"  class="form-control" id="product_category" name="product_category">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product_number" class="control-label  col-lg-2">入库数量:</label>
+                        <div class="col-lg-6">
+                            <input type="text" class="form-control" id="product_number" name="product_number">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product_standard"   class="control-label  col-lg-2">商品规格:</label>
+                        <div class="col-lg-6">
+                            <input type="text"  class="form-control"  id="product_standard" name="product_standard">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product_price" class="control-label  col-lg-2" >商品单价:</label>
+                        <div class="col-lg-6">
+                             <input type="text"  class="form-control" id="product_price" name="product_price">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product_profit" class="control-label  col-lg-2" >单件收入:</label>
+                        <div class="col-lg-6">
+                             <input type="text"  class="form-control" id="product_profit" name="product_profit">
+                        </div>
+                    </div>
+                    
+
+
+                <div class="btn-group">
+                    <span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </span>
+                    <span>
+                        <input type="submit"  class="btn  btn-primary" value="提交保存" >
+                    </span>
+                    <span>
+                        <input type="reset"   class="btn  btn-default" value="返回列表" >
+                    </span>
+                </div>
+            </form>
+                </div>
+            </div>           
+
+        </div>
+{% endblock %}
